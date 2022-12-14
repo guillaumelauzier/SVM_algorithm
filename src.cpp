@@ -39,4 +39,28 @@ vector<double> gradient(vector<vector<double>> X, vector<double> y, vector<doubl
 void gradient_descent(vector<vector<double>> X, vector<double> y, vector<double>& w,
                       double learning_rate, int num_iters) {
   for (int i = 0; i < num_iters; i++) {
-    vector<double> grad = gradient(X, y,
+    vector<double> grad = gradient(X, y, w);
+    for (int j = 0; j < w.size(); j++) {
+      w[j] += learning_rate * grad[j];
+    }
+  }
+}
+
+int main() {
+  // Define the training data
+  vector<vector<double>> X = {{1, 1}, {1, 2}, {1, 3}, {1, 4}, {1, 5}};
+  vector<double> y = {-1, -1, -1, 1, 1};
+
+  // Initialize model weights
+  vector<double> w = {0, 0};
+
+  // Train the model using gradient descent
+  gradient_descent(X, y, w, 0.1, 100);
+
+  // Print the learned model weights
+  cout << "w0: " << w[0] << endl;
+  cout << "w1: " << w[1] << endl;
+
+  return 0;
+}
+
