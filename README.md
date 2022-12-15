@@ -1,5 +1,5 @@
 # SVM_algorithm
 
-Support vector machines (SVMs) are a type of supervised machine learning algorithm used for classification and regression tasks. Here is an example of how you could implement an SVM in C++
+Support Vector Machines (SVMs) are a type of supervised learning algorithm that can be used for both classification and regression tasks. The goal of an SVM is to find the best possible dividing line (or hyperplane) that can separate the data into the classes or values that we are trying to predict. In the case of classification tasks, the goal is to find a line that can split the data into two or more classes in a way that maximizes the margin, or the distance between the line and the closest data points from each class. In the case of regression tasks, the goal is to find a line that can fit the data in such a way that minimizes the error between the predicted values and the true values. Here is an example of how you could implement an SVM in C++
 
 In this code, the predict function takes a vector of input features, x, and a vector of model weights, w, and returns the predicted outcome using the SVM model. The gradient function computes the gradient of the hinge loss with respect to the model weights, which is used in the gradient_descent function to learn the model.
